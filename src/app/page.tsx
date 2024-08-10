@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Screen from "@/components/Screen";
 import Socials from "@/components/Socials";
+import AboutSection from "@/sections/AboutSection";
+import ExperienceSection from "@/sections/ExperienceSection";
 
 export default function Home() {
   return (
@@ -21,18 +23,10 @@ export default function Home() {
           <Navbar />
           <Socials />
         </div>
-        <div className="flex w-1/2">
+        <div className="flex w-1/2 py-24">
           <div className="flex flex-col w-full ">
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
-            <span className="mb-20">Hello</span>
+            <AboutSection />
+            <ExperienceSection />
           </div>
         </div>
       </div>
