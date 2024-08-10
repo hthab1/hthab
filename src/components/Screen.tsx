@@ -11,11 +11,12 @@ function Screen({ children }: ScreenProps) {
     x: number;
     y: number;
   }>({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      setCursorPosition({ x: event.clientX, y: event.clientY });
+      setCursorPosition({ x: event.clientX, y: event.clientY + scrollY });
     };
 
     const element = ref.current;
@@ -28,6 +29,19 @@ function Screen({ children }: ScreenProps) {
         element.removeEventListener("mousemove", handleMouseMove);
       }
     };
+  }, [scrollY]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        setScrollY(window.scrollY);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   return (
@@ -39,7 +53,7 @@ function Screen({ children }: ScreenProps) {
       }}
     >
       <div
-        className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
+        className="pointer-events-none fixed top-0 inset-0 z-30 transition duration-300 lg:absolute"
         style={{
           background: `radial-gradient(700px at ${cursorPosition.x}px ${cursorPosition.y}px, rgba(29, 78, 216, 0.15), transparent 70%)`,
         }}

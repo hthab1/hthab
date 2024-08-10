@@ -2,7 +2,7 @@ import React from "react";
 
 function AboutSection() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-4 ">
       <p className="mb-4">
         Back in 2012, I decided to try my hand at creating custom Tumblr themes
         and tumbled head first into the rabbit hole of coding and web

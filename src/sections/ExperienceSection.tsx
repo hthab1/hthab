@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 function ExperienceSection() {
   const items = [
@@ -34,7 +34,7 @@ function ExperienceSection() {
       ],
     },
     {
-      start: "JUL",
+      start: "JULY",
       end: "DEC",
       year: "2017",
       title: "UI Engineer Co-op",
@@ -55,7 +55,7 @@ function ExperienceSection() {
       skills: ["Jekyll", "SCSS", "Javascript", "Wordpress"],
     },
     {
-      start: "JUL",
+      start: "JULY",
       end: "DEC",
       year: "2016",
       title: "Software Engineer Co-op",
@@ -66,7 +66,7 @@ function ExperienceSection() {
       skills: ["Cordova", "Backbone", "Javascript", "CSS"],
     },
     {
-      start: "JUL",
+      start: "JULY",
       end: "DEC",
       year: "2015",
       title: "Creative Technologist Co-op",
@@ -78,7 +78,41 @@ function ExperienceSection() {
     },
   ];
 
-  return <div className="flex flex-col">hello</div>;
+  return (
+    <div className="flex flex-col pt-32 ">
+      {items?.map((item, index) => (
+        <ExperienceContainer
+          className="flex w-full"
+          key={index}
+          link={item.link}
+        >
+          <div className="w-full flex p-4 gap-4">
+            <header className="w-[110px] text-[#64748B] text-xs ">
+              {item?.start} — {item?.end} {item?.year}
+            </header>
+          </div>
+        </ExperienceContainer>
+      ))}
+    </div>
+  );
 }
+
+const ExperienceContainer = ({
+  link,
+  children,
+  className,
+}: {
+  link?: string;
+  children: ReactNode;
+  className?: string;
+}) => {
+  return link ? (
+    <a href={link} className={`${className}`}>
+      {children}
+    </a>
+  ) : (
+    <div className={`${className}`}>{children}</div>
+  );
+};
 
 export default ExperienceSection;
