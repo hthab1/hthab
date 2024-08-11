@@ -1,12 +1,12 @@
 import CardBG1 from "@/components/CardBG1";
 import Skill from "@/components/Skill";
-import { Experiences, ExperienceType } from "@/data/experiences";
+import { Projects, ProjectType } from "@/data/projects";
 import React, { ReactNode } from "react";
 
-function ExperienceSection() {
+function ProjectsSection() {
   return (
     <div className="flex flex-col pt-32 gap-10">
-      {Experiences?.map((item, index) => (
+      {Projects?.map((item, index) => (
         <ExperienceContainer
           className="flex w-full group/experience"
           key={index}
@@ -14,12 +14,12 @@ function ExperienceSection() {
         >
           <div className="w-full flex p-4 gap-4 relative group">
             <CardBG1 />
-            <ExperienceHeader item={item} />
+            <ProjectHeader item={item} />
             <div className="flex flex-col flex-1 z-10">
-              <ExperienceTitle item={item} />
+              <ProjectTitle item={item} />
               <p className="mt-2 text-sm leading-normal">{item.description}</p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {item.skills?.map((skill, skillIndex) => (
+                {item.stack?.map((skill, skillIndex) => (
                   <Skill skill={skill} key={index} />
                 ))}
               </div>
@@ -27,27 +27,32 @@ function ExperienceSection() {
           </div>
         </ExperienceContainer>
       ))}
-      <ExperienceResume />
+      <ProjectFullArchive />
     </div>
   );
 }
 
-const ExperienceHeader = ({ item }: { item: ExperienceType }) => {
+const ProjectHeader = ({ item }: { item: ProjectType }) => {
   return (
-    <header className="w-[110px] text-[#64748B] text-xs z-10">
-      {item?.start} — {item?.end} {item?.year}
+    <header className="w-[110px] text-[#64748B] text-xs z-10 opacity-60">
+      <img
+        src={item?.cover}
+        alt=""
+        loading="lazy"
+        className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1"
+      />
     </header>
   );
 };
 
-const ExperienceTitle = ({ item }: { item: ExperienceType }) => {
+const ProjectTitle = ({ item }: { item: ProjectType }) => {
   return (
     <div className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 group/experience:hover:text-teal-300  group/link text-base">
       <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
       <span>
-        {item.title} ·{" "}
+        {item.name} {item.madeAt ? "·" : ""}{" "}
         <span className="inline-block">
-          {item.company}
+          {item.madeAt}
           <ArrowIcon />
         </span>
       </span>
@@ -73,30 +78,32 @@ const ArrowIcon = () => {
   );
 };
 
-const ExperienceResume = () => {
+const ProjectFullArchive = () => {
   return (
-    <div>
+    <div className="mt-12">
       <a
-        className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
-        href="/resume.pdf"
-        target="_blank"
-        rel="noreferrer noopener"
-        aria-label="View Full Résumé (opens in a new tab)"
+        className="inline-flex items-center font-semibold leading-tight text-slate-200  group"
+        aria-label="View Full Project Archive"
+        href="/projects"
       >
         <span>
-          View Full{" "}
-          <span className="inline-block">
-            Resume
+          <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
+            View Full Project{" "}
+          </span>
+          <span className="whitespace-nowrap ">
+            <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
+              Archive
+            </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+              className="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
               aria-hidden="true"
             >
               <path
                 fill-rule="evenodd"
-                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
                 clip-rule="evenodd"
               ></path>
             </svg>
@@ -125,4 +132,4 @@ const ExperienceContainer = ({
   );
 };
 
-export default ExperienceSection;
+export default ProjectsSection;

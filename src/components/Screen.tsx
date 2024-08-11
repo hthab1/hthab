@@ -46,7 +46,7 @@ function Screen({ children }: ScreenProps) {
 
   return (
     <div
-      className="flex flex-col items-center relative "
+      className="flex flex-col min-h-screen items-center relative "
       ref={ref}
       style={{
         background: `radial-gradient(rgba(29, 78, 216, 0.15), rgba(29, 78, 216, 0.15))`,

@@ -2,10 +2,14 @@
 
 import React, { useState } from "react";
 
-function Navbar() {
-  const [selected, setSelected] = useState<string>("about");
+interface NavbarInterface {
+  selected?: string;
+  setSelected?: (selected: string) => void;
+}
+
+function Navbar({ setSelected, selected }: NavbarInterface) {
   const OnClick = (menu: string) => {
-    setSelected(menu);
+    setSelected && setSelected(menu);
   };
 
   const items = [
