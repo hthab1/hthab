@@ -4,17 +4,7 @@ function Footer() {
   return (
     <footer className="max-w-md pb-16 mt-20 text-sm text-slate-500 sm:pb-0">
       <p className="text-[#64748b]">
-        Loosely designed in{" "}
-        <a
-          href="https://www.figma.com/"
-          className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="Figma (opens in a new tab)"
-        >
-          Figma
-        </a>{" "}
-        and coded in{" "}
+        Coded in{" "}
         <a
           href="https://code.visualstudio.com/"
           className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
@@ -23,8 +13,8 @@ function Footer() {
           aria-label="Visual Studio Code (opens in a new tab)"
         >
           Visual Studio Code
-        </a>{" "}
-        by yours truly. Built with{" "}
+        </a>
+        . Built with{" "}
         <a
           href="https://nextjs.org/"
           className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
@@ -54,17 +44,6 @@ function Footer() {
         >
           Vercel
         </a>
-        . All text is set in the{" "}
-        <a
-          href="https://rsms.me/inter/"
-          className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="Inter (opens in a new tab)"
-        >
-          Inter
-        </a>{" "}
-        typeface.
       </p>
     </footer>
   );
