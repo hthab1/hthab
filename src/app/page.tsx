@@ -117,10 +117,11 @@ export default function Home() {
             </a>
           </h1>
           <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-            Senior Frontend Engineer
+            Front-End Developer
           </h2>
           <p className="mt-4 max-w-xs leading-normal text-base">
-            I build pixel-perfect, engaging, and accessible digital experiences.
+            I specialize in pixel perfect front end development, backed by
+            strong full-stack capabilities
           </p>
           <Navbar selected={selected} setSelected={handleSelect} />
           <Socials />
