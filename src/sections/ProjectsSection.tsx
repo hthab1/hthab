@@ -124,7 +124,7 @@ const ExperienceContainer = ({
   className?: string;
 }) => {
   return link ? (
-    <a href={link} className={`${className}`}>
+    <a href={link} target="_blank" rel="noreferrer" className={`${className}`}>
       {children}
     </a>
   ) : (
