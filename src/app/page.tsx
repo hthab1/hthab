@@ -109,8 +109,8 @@ export default function Home() {
 
   return (
     <Screen>
-      <div className="flex relative flex-row w-full">
-        <div className="flex w-1/2 sticky flex-col top-0 h-screen py-24">
+      <div className="flex relative flex-col lg:flex-row w-full">
+        <div className="flex w-full lg:w-1/2 lg:sticky flex-col lg:top-0 lg:h-screen py-12 lg:py-24 px-4 lg:px-0">
           <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
             <a href="/" data-ninja-font="inter_bold_normal" className="">
               Habteweld Yimer
@@ -126,7 +126,7 @@ export default function Home() {
           <Navbar selected={selected} setSelected={handleSelect} />
           <Socials />
         </div>
-        <div className="flex w-1/2 py-24">
+        <div className="flex w-full lg:w-1/2 py-10 lg:py-24 ">
           <div className="flex flex-col w-full ">
             <div ref={aboutRef}></div>
             <AboutSection />

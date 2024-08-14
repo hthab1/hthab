@@ -5,14 +5,17 @@ import React, { ReactNode } from "react";
 
 function ExperienceSection() {
   return (
-    <div className="flex flex-col pt-32 gap-10">
+    <div className="flex flex-col pt-32 gap-10 relative px-4 lg:px-0">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 sticky backdrop-blur flex lg:hidden top-0 py-3 z-20">
+        Experience
+      </h2>
       {Experiences?.map((item, index) => (
         <ExperienceContainer
           className="flex w-full group/experience"
           key={index}
           link={item.link}
         >
-          <div className="w-full flex p-4 gap-4 relative group">
+          <div className="w-full flex flex-col lg:flex-row lg:p-4 gap-4 relative group">
             <CardBG1 />
             <ExperienceHeader item={item} />
             <div className="flex flex-col flex-1 z-10">

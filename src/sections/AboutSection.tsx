@@ -2,7 +2,10 @@ import React from "react";
 
 function AboutSection() {
   return (
-    <div className="flex flex-col px-4 ">
+    <div className="flex flex-col px-4 relative">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 sticky backdrop-blur flex lg:hidden top-0 py-3">
+        About
+      </h2>
       <p className="mb-4">
         {`Back in the day, I wanted to create my own game in Unity, so I dove into coding with C#. That initial spark of curiosity quickly led me to explore JavaScript, and before I knew it, I was deep into the world of React and React Native. I started my journey freelancing, offering my skills to various companies, and now I work at a web and app development agency.`}
       </p>

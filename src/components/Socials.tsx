@@ -14,7 +14,7 @@ function Socials() {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="flex flex-1"></div>
+      <div className="flex lg:flex-1 mt-4"></div>
       <div className="flex gap-5">
         {items.map((item, index) => (
           <Link

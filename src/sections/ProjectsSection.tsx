@@ -5,14 +5,17 @@ import React, { ReactNode } from "react";
 
 function ProjectsSection() {
   return (
-    <div className="flex flex-col pt-32 gap-10">
+    <div className="flex flex-col pt-32 gap-10 relative">
+      <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 sticky backdrop-blur flex lg:hidden top-0 py-3 z-20 px-4">
+        Projects
+      </h2>
       {Projects?.filter((project) => project?.frontPage)?.map((item, index) => (
         <ExperienceContainer
           className="flex w-full group/experience"
           key={index}
           link={item.link}
         >
-          <div className="w-full flex p-4 gap-4 relative group">
+          <div className="w-full flex flex-col-reverse lg:flex-row p-4 gap-4 relative group">
             <CardBG1 />
             <ProjectHeader item={item} />
             <div className="flex flex-col flex-1 z-10">
@@ -34,7 +37,7 @@ function ProjectsSection() {
 
 const ProjectHeader = ({ item }: { item: ProjectType }) => {
   return (
-    <header className="w-[110px] text-[#64748B] text-xs z-10 opacity-60">
+    <header className="w-[200px] lg:w-[110px] text-[#64748B] text-xs z-10 opacity-60">
       <img
         src={item?.cover}
         alt=""
@@ -80,7 +83,7 @@ const ArrowIcon = () => {
 
 const ProjectFullArchive = () => {
   return (
-    <div className="mt-12">
+    <div className="mt-12 px-4 lg:px-0">
       <a
         className="inline-flex items-center font-semibold leading-tight text-slate-200  group"
         aria-label="View Full Project Archive"

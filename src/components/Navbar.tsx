@@ -28,7 +28,7 @@ function Navbar({ setSelected, selected }: NavbarInterface) {
   ];
 
   return (
-    <div className="flex flex-col tracking-widest w-fit mt-16">
+    <div className="hidden lg:flex flex-col tracking-widest w-fit mt-16">
       {items?.map((item, index) => (
         <span
           key={index}
