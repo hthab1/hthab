@@ -6,7 +6,7 @@ import React, { ReactNode } from "react";
 function ProjectsSection() {
   return (
     <div className="flex flex-col pt-32 gap-10">
-      {Projects?.map((item, index) => (
+      {Projects?.filter((project) => project?.frontPage)?.map((item, index) => (
         <ExperienceContainer
           className="flex w-full group/experience"
           key={index}
@@ -88,7 +88,7 @@ const ProjectFullArchive = () => {
       >
         <span>
           <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
-            View Full Project{" "}
+            View More Project{" "}
           </span>
           <span className="whitespace-nowrap ">
             <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">

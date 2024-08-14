@@ -12,21 +12,6 @@ export type ProjectType = {
   madeAt?: string;
 };
 
-let exampleProject = {
-  id: "spotify-app",
-  name: "Build a Spotify Connected",
-  link: "https://www.newline.co/courses/build-a-spotify-connected-app",
-  linkText: "newline.co",
-  cover: "/example.jpeg",
-  description:
-    "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-  stack: ["React", "Express", "Sportify API", "Heroku"],
-  frontPage: true,
-  detail: {},
-  madeIn: "2018",
-  madeAt: "Upstatement",
-};
-
 export const Projects: ProjectType[] = [
   {
     id: "intraverse",
@@ -110,6 +95,65 @@ export const Projects: ProjectType[] = [
       "Express.js",
     ],
     frontPage: true,
+    detail: {},
+    madeIn: "2023",
+  },
+  {
+    id: "mamba",
+    name: "Mamba fantasy",
+    link: "https://apps.apple.com/us/app/mamba-fantasy/id6449004109",
+    linkText: "apps.apple.com/us/app/mamba-fantasy",
+    cover: "/shebatimecover.png",
+    description:
+      "Cricket fantasy betting app where I handled the front-end development using React Native. Additionally, I developed a custom plugin to integrate the game into another company's e-commerce app as part of a business deal.",
+    stack: ["React", "React Native", "Javascript", "TypeScript", "REST API"],
+    detail: {},
+    madeIn: "2023",
+    madeAt: "Startupagile",
+  },
+  {
+    id: "blueprt",
+    name: "Blue print",
+    link: "https://blueprt.agency/",
+    linkText: "blueprt.agency",
+    cover: "/shebatimecover.png",
+    description:
+      "Built the landing page for a marketing agency using React, Webflow, and JavaScript. Focused on creating a responsive and optimized front-end to enhance user experience and performance.",
+    stack: ["React", "Webflow", "Javascript"],
+    detail: {},
+    madeIn: "2022",
+  },
+  {
+    id: "tetraone",
+    name: "Tetraone",
+    link: "https://play.google.com/store/apps/details?id=com.tetraone.tetraone&hl=en_US",
+    linkText: "com.tetraone.tetraone",
+    cover: "/shebatimecover.png",
+    description:
+      "Developed the dashboard and two React Native apps for a platform that facilitates rent payments, property leasing, and more. Created one app for customers and another for agents, using React and React Native to ensure seamless functionality across all interfaces.",
+    stack: ["React", "React Native", "Javascript", "REST API"],
+    detail: {},
+    madeIn: "2023",
+    madeAt: "Touchcore",
+  },
+  {
+    id: "bosscar",
+    name: "Bosscar",
+    link: "https://play.google.com/store/apps/details?id=com.bosscar.app&hl=en_US",
+    linkText: "com.bosscar.app",
+    cover: "/shebatimecover.png",
+    description:
+      "Developed the dashboard and mobile app for a car buying and selling platform. Handled full-stack development using the MERN stack (MongoDB, Express, React, Node.js) for the backend and React Native for the mobile application.",
+    stack: [
+      "React",
+      "React Native",
+      "Javascript",
+      "TypeScript",
+      "REST API",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+    ],
     detail: {},
     madeIn: "2023",
   },

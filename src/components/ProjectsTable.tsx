@@ -8,9 +8,11 @@ function ProjectsTable() {
     <table id="content" className="mt-12 w-full border-collapse text-left">
       <ProjectHeadTable />
       <tbody>
-        {Projects.map((project, index) => (
-          <ProjectRow key={index} project={project} />
-        ))}
+        {Projects?.sort((a, b) => Number(b?.madeIn) - Number(a?.madeIn)).map(
+          (project, index) => (
+            <ProjectRow key={index} project={project} />
+          )
+        )}
       </tbody>
     </table>
   );
@@ -18,7 +20,7 @@ function ProjectsTable() {
 
 const ProjectHeadTable = () => {
   return (
-    <thead className="sticky top-0 z-10 border-b border-slate-300/10 px-6 py-5">
+    <thead className="sticky top-0 z-10 border-b border-slate-300/10 px-6 py-5 backdrop-blur ">
       <tr>
         <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Year</th>
         <th className="py-4 pr-8 text-sm font-semibold text-slate-200">
@@ -60,7 +62,7 @@ const ProjectRow = ({ project }: { project: ProjectType }) => {
         </div>
       </td>
       <td className="hidden py-4 pr-4 align-top lg:table-cell">
-        <ul className="flex -translate-y-1.5 flex-wrap gap-2">
+        <ul className="flex -translate-y-1.5 flex-wrap gap-2 max-w-sm">
           {project.stack?.map((skill, index) => (
             <Skill skill={skill} key={index} />
           ))}
