@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ["greek-ext"] });
 
 export const metadata: Metadata = {
   title: "Habteweld Yimer",
-  description: "Habteweld  Yimer portfolio",
+  description:
+    "Explore my portfolio. I am a skilled front-end developer with expertise in the MERN stack, React Native, and web development. Discover projects showcasing advanced UI/UX design, responsive web applications, and mobile app development.",
 };
 
 export default function RootLayout({
@@ -16,9 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="h.ico" />
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
