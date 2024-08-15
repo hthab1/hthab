@@ -45,14 +45,7 @@ function Screen({ children }: ScreenProps) {
   }, []);
 
   return (
-    <div
-      className="flex flex-col min-h-screen items-center relative bg-black"
-      ref={ref}
-      style={{
-        backgroundColor: "black",
-        background: `radial-gradient(rgba(29, 78, 216, 0.15), rgba(29, 78, 216, 0.15))`,
-      }}
-    >
+    <div className="flex flex-col min-h-screen items-center relative" ref={ref}>
       <div
         className="pointer-events-none fixed top-0 inset-0 z-30 transition duration-300 lg:absolute"
         style={{
